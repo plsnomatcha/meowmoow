@@ -203,20 +203,6 @@ body {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
 }
 
-#addphoto {
-    position: fixed;
-    width: 300px;
-
-    left: 50%;
-    bottom: 120px;
-
-    transform: translateX(-50%);
-
-    z-index: 4;
-
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
-}
-
 #sagel {
     position: fixed;
     width: 230px;
