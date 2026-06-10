@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <div id="app">
+    
+    <div id="loadingScreen" class="screen">
+      <img src="meow.gif" id="loadingGif">
+    </div>
+    
+    <div id="mainScreen" class="screen">
+      
+      <img src="cat1.png" id="cat1" class="draggable">
+      <img src="tape.png" id="tape" class="draggable">
+      <img src="cd1.png" id="disctape" class="draggable">
+      <img src="book.png" id="book" class="draggable">
+      <img src="cam.png" id="camera" class="draggable">
+      
+      <audio id="player" preload="auto"></audio>
+    </div>
+
+    
+<div id="bookScreen" class="screen">
+  
+  <img src="bookback.png" id="backFromBook" class="backBtn">
+  
+  <img src="saagel.png" id="sagel" class="clickable">
+  
+  <img src="aezthettee.png" id="aezthette" class="clickable">
+  
+</div>
+
+    
+
+<div id="sagelScreen" class="screen2">
+  
+  <input id="sagelTitle" placeholder="Title">
+  
+  <textarea id="sagelSubtitle" placeholder="Write something..."></textarea>
+  
+  <input id="sagelDate" type="text" placeholder="Date">
+  
+  <button id="backToBookSagel" class="glassBack">Back</button>
+  
+  <button id="saveSagel" class="sagelsavebutton">
+Save
+</button>
+
+</div>
+
+
+    
+<div id="aezthetteScreen" class="screen2">
+  
+  <input id="aezTitle" placeholder="Title">
+  
+  <textarea id="aezSubtitle" placeholder="Write something..."></textarea>
+  
+  <input id="aezDate" type="text" placeholder="Date">
+  
+  <button id="backToBookAez" class="glassBack">Back</button>
+  
+  <button id="saveAez" class="aezsavebutton">
+  Save
+</button>
+
+</div>
+
+    
+
+    
+    <div id="cameraScreen" class="screen">
+      
+      <img src="cameraback.png" id="backFromCamera" class="backBtn">
+      
+    </div>
+  
+  </div>
+  
+</body>
+
+<script type="module" src="script.js" defer></script>
+
+</html>
