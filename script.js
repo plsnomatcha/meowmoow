@@ -9,7 +9,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-// FIREBASE CONFIG
 const firebaseConfig = {
   apiKey: "AIzaSyC2V3wNpGiCoeP-mh-une8IoJFbM_0jD34",
   authDomain: "idontknow-863d3.firebaseapp.com",
@@ -24,7 +23,6 @@ const storage = getStorage(app);
 const db = getFirestore(app);
 
 
-// LOADING SCREEN
 setTimeout(() => {
   const loadingScreen = document.getElementById("loadingScreen");
   const mainScreen = document.getElementById("mainScreen");
@@ -44,7 +42,6 @@ setTimeout(() => {
 }, 900);
 
 
-// CAT TOGGLE
 const cat1 = document.getElementById("cat1");
 let cat1State = false;
 
@@ -54,7 +51,6 @@ cat1?.addEventListener("click", () => {
 });
 
 
-// MUSIC SYSTEM
 const discTape = document.getElementById("disctape");
 const player = document.getElementById("player");
 
@@ -93,7 +89,6 @@ discTape?.addEventListener("click", (e) => {
 });
 
 
-// SCREENS
 const mainScreen = document.getElementById("mainScreen");
 const bookScreen = document.getElementById("bookScreen");
 const cameraScreen = document.getElementById("cameraScreen");
@@ -111,7 +106,6 @@ function showScreen(screen) {
 }
 
 
-// NAVIGATION
 document.getElementById("book")?.addEventListener("click", () => showScreen(bookScreen));
 document.getElementById("camera")?.addEventListener("click", () => {
   showScreen(cameraScreen);
@@ -131,7 +125,6 @@ document.addEventListener("click", (e) => {
 });
 
 
-// INPUTS
 const sagelTitle = document.getElementById("sagelTitle");
 const sagelSubtitle = document.getElementById("sagelSubtitle");
 const sagelDate = document.getElementById("sagelDate");
@@ -144,7 +137,6 @@ const sagelDoc = doc(db, "notes", "sagel");
 const aezDoc = doc(db, "notes", "aezthette");
 
 
-// SAVE FUNCTIONS (FIXED)
 function saveSagel() {
   return setDoc(sagelDoc, {
     title: sagelTitle?.value || "",
@@ -162,7 +154,6 @@ function saveAez() {
 }
 
 
-// BACK BUTTON SAVE
 document.getElementById("backToBookSagel")?.addEventListener("click", async () => {
   await saveSagel();
   showScreen(bookScreen);
@@ -174,7 +165,6 @@ document.getElementById("backToBookAez")?.addEventListener("click", async () => 
 });
 
 
-// SAVE BUTTONS
 document.getElementById("saveSagel")?.addEventListener("click", async () => {
   await saveSagel();
 });
@@ -184,7 +174,6 @@ document.getElementById("saveAez")?.addEventListener("click", async () => {
 });
 
 
-// AUTO SAVE
 [sagelTitle, sagelSubtitle, sagelDate].forEach(el => {
   el?.addEventListener("input", saveSagel);
 });
@@ -194,7 +183,6 @@ document.getElementById("saveAez")?.addEventListener("click", async () => {
 });
 
 
-// LOAD DATA
 onSnapshot(sagelDoc, (snap) => {
   if (!snap.exists()) return;
   const d = snap.data();
